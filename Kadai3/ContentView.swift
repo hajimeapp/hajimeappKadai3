@@ -74,18 +74,17 @@ struct ContentView: View {
     func fixOperation() {
         let intLeftNumber = Int(typedLeftNumber) ?? 0
         let intRightNumber = Int(typedRightNumber) ?? 0
-        switch leftSwitcher {
-        case false:
-            fixedLeftNumber = intLeftNumber
-        case true:
+
+        if leftSwitcher {
             fixedLeftNumber = -intLeftNumber
+        } else {
+            fixedLeftNumber = intLeftNumber
         }
         
-        switch rightSwitcher {
-        case false:
-            fixedRightNumber = intRightNumber
-        case true:
+        if rightSwitcher {
             fixedRightNumber = -intRightNumber
+        } else {
+            fixedRightNumber = intRightNumber
         }
     }
     
